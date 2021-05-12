@@ -1,0 +1,8 @@
+## Redirects example.com/cool-page.html to example.com/cool-page
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteCond %{REQUEST_URI} ^(.+)\.php$
+RewriteRule (.*)\.php$ /$1 [R=301,L]
+
+RewriteEngine On
+RewriteRule ^post/(.*)$ /post.php?page=$1 [L]
